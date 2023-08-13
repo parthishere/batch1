@@ -52,34 +52,34 @@
 # print(c.speak())
 
 
-# class A():
-#     class_a = 10
+class A():
+    class_a = 10
     
-#     def __init__(self):
-#         # self.radius = 1
-#         self._a = 2
-#         self.__a = 3
+    def __init__(self):
+        self.rad = 1
+        self._a = 2
+        self.__a = 3
         
-#     # def __del__(self):
-#     #     print("destructor called")
+    def __del__(self):
+        print("destructor called")
     
-#     def method_a(self):
-#         print("method from A")
+    def method_a(self):
+        print("method from A")
       
-#     @property  
-#     def area(self):
-#         return 3.14*(self.radius**2)
+    @property  
+    def area(self):
+        return 3.14*(self.rad**2)
     
-#     @property  
-#     def radius(self):
-#         return self.radius
+    @property  
+    def radius(self):
+        return self.rad
     
-    # @radius.fset
-    # def set_radius(self, radius):
-    #     self.radius = radius
+    @radius.setter
+    def set_radius(self, radius):
+        self.rad = radius
         
-    # def __repr__(self):
-    #     return f"A class with properties {self.radius}, {self.a}"
+    def __repr__(self):
+        return f"A class with properties {self.radius}, {self.a}"
         
 # class B():
 #     def __init__(self):
@@ -103,6 +103,23 @@
 # c.method_c()
 
 a = A()
-# print(a.area)
-a.set_radius = 2
+print(a.area)
+a.set_radius = 10
 print(a.radius)
+print(a._a)
+print(a.__a)
+print(a.__dict__)
+
+
+#file handeling
+
+
+# file = open("hello.txt", "r")
+# for i in range(0, 5):
+#     print(file.readline())
+    
+# file.close()
+
+
+with open("hello.txt", "r") as file:
+    print(file.readlines())
